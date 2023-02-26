@@ -1,0 +1,58 @@
+"""
+ This algorithm is to implement the M|M|2 queuing system. 
+ Particularly, we are considering the situation of an airport: 
+ DC Dulles International Airport (IAD). We segregate the data into both majority and
+ minority airlines in the airport and model the M\M|2 queue to servve both majority
+ and minority groups. 
+"""
+
+import numpy as np
+import pandas as pd
+"""
+We will define the key variables that tell us about 
+the performance of the system are average wait time, 
+utilization of servers, number of people waiting in line, 
+and lost customers, some of which are directly calculated 
+and others derived.
+"""
+
+class Airline_Simulation:
+    def __init__(self):
+        self.clock = 0.0                        # Simulation clock
+        self.num_arrivals = 0                   # Total number of arrivals
+        self.t_arrival = self.gen_int_arr()     # Timem of next arrival 
+        self.t_departure1 = float('inf')        # departure time from majority airline
+        self.t_departure2 = float('inf')        # departure time from minority airline
+        self.dep_sum1 = 0                       # sum of service times by majority airline
+        self.dep_sum2 = 0                       # sum of service time by minority airline
+        self.state_1 = 0                        # current state of majority airline (binary)
+        self.state_2 = 0                        # current state of minority airline (binary)
+        self.total_wait_time = 0.0           # total wait time
+        self.num_in_q = 0                       # current number in queue
+        self.number_in_queue = 0                # customers who had to wait in line (counter)
+        self.num_of_departures1 = 0             # number of customers served by majority airline
+        self.num_of_departures2 = 0             # number of customers served by minority airline
+        self.lost_customers = 0                 # customers who left without service 
+
+"""
+Time routine: The timing routing which event occurs next 
+by comparing the schedule time of events and advances the
+simulation clock to the respective event
+"""
+def time_adv(self):
+    t_next_event = min(self.t_arrival, self.t_departure1, self.t_departure2)
+    self.total_wait_time += (self.num_in_q * (t_next_event - self.clock))           # Check this well in the calculation
+    self.clock = t_next_event
+
+    if self.t_arrival < self.t_departure1 and self.t_arrival < self.t_departure2:
+        self.arrival()
+    elif self.t_departure1 < self.t_arrival and self.t_departure1 < self.t_departure2:
+        self.teller1()
+    else:
+        self.teller2()
+
+"""
+Arrival event: 
+Code up the arrival conditions for the main queue
+"""
+
