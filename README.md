@@ -1,2 +1,14 @@
 # Airlines_and_minority_game
-This project seeks to optimize an airline problem in the perspective of minority game. 
+Airline Profit Optimization Problem in the Context of Minority Game at Washington DC Dulles International Airport. 
+
+Problem context:  
+Every corporation needs a headquarters of operations and it is no different in the airline industry. Different airlines have specific places of major operations at different places in the US and therefore the airline industry in the US is heavily disproportional at these specific regions. For example: data from the Bureau of Transportation Statistics (BTS) shows heavy concentrations of Southwest airlines in places such as Dallas Love Field Airport while Delta dominates places such as Atlanta International airport. The minority airlines in the biased airports were significantly limited in various regards, and for this intent, we seek to simulate, optimize the situation and to design a game that will favor the minority in the airport. In our study, we are looking at airports with a relative distribution of 60% for the majority airline and 40% for the combined minority. Also, we are considering smaller airports which can be scoped to meet the demands of this project in order to deliver sustainable and meaningful results. In light of the above conditions, we selected the Washington DC Dulles International Airport (IAD) as a case study.
+
+
+Problem statement: 
+Our project will use Simulation, Optimization and Game Theory to optimize the profit margin for the minority airline at IAD. According to BTS, 60% of flights flying out from IAD are operated by United Airlines, and the remaining 40% of flights are operated by Delta Airlines, Mesa Airlines and others. Based on the existing data, we defined United Airlines as the majority airline and combined all the other airlines as the majority airline. We will first simulate the majority airline and the minority airline activities at IAD using transportation data. Then, we will optimize the profit based on adjusting the number of flights and the capacity per flight. Lastly, we will design a minority game that the minority airline has a higher profit margin compared to the majority airline.
+
+
+Work done:
+The scope of our project is best described by a three step process. Initially, we will simulate a M|M|2 model through MATLAB to reflect current majority and minority activities, such as number of departing passengers, number of flights, and airline profit percentage for a year. We will implement this derived solution in the design of the minority game, to ensure that the non-prevalent airlines will be the winners of our case study. Moving forward, we shall examine the profit optimization problem for each of the minority airlines, grouped together, such that the percentage profit is maximized and exceeds the one of the main competitor, United Airlines. Lastly, we will apply the minority game rules to conclude whether our results match the set expectations of the game.
+
